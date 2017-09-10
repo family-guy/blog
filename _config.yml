@@ -7,6 +7,8 @@ author:
   name: CloudCannon
   email: support@cloudcannon.com
 
+baseurl: "/blog/"
+
 builds:
   - Any
   - Static
