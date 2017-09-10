@@ -14,7 +14,7 @@
 		<ul>
 			{% assign url = page.url %}
 			{% if url == "/" %}
-				{% assign url = "/overview/welcome/" %}
+				{% assign url = site.baseurl | append: "/overview/welcome/" %}
 			{% endif %}
 
 			{% assign sorted_collections = site.collections | sort: 'order' %}
