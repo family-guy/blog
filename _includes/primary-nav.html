@@ -1,6 +1,6 @@
 <header>
 	<h1>
-		<a href="/"><img src="{{ site.baseurl }}/img/emblem.svg" width="40" height="40" alt="CloudCannon"></a>
+		<a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/emblem.svg" width="40" height="40" alt="CloudCannon"></a>
 		Documentation
 		<button type="button" class="open-nav" id="open-nav"></button>
 	</h1>
@@ -14,7 +14,7 @@
 		<ul>
 			{% assign url = page.url %}
 			{% if url == "/" %}
-				{% assign url = site.baseurl | append: "/overview/welcome/" %}
+				{% assign url = "/overview/welcome/" %}
 			{% endif %}
 
 			{% assign sorted_collections = site.collections | sort: 'order' %}
@@ -23,10 +23,10 @@
 					{% assign parts = url | split: "/" %}
 					<li class="nav-item top-level {% if parts[1] == collection.active_prefix %}current{% endif %}">
 						{% assign items = collection.docs | sort: 'order' %}
-						<a href="{{ items.first.url }}">{{ collection.title }}</a>
+						<a href="{{ site.baseurl }}/{{ items.first.url }}">{{ collection.title }}</a>
 						<ul>
 							{% for item in items %}
-								<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ item.url }}">{{ item.title }}</a></li>
+							<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}/{{ item.url }}">{{ item.title }}</a></li>
 							{% endfor %}
 						</ul>
 					</li>
@@ -35,7 +35,7 @@
 		</ul>
 		<ul>
 			<li class="nav-item top-level {% if url contains '/changelog/' %}current{% endif %}">
-				<a href="/changelog/">Change Log</a>
+			<a href="{{ site.baseurl }}/changelog/">Change Log</a>
 			</li>
 		</ul>
 	</nav>
