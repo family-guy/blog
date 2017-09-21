@@ -37,7 +37,7 @@ collections:
     output: true
     order: 2
   workflow:
-    title: Developer workflow
+    title: Workflow
     permalink: /workflow/:title/
     active_prefix: workflow
     output: true
