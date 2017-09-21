@@ -113,7 +113,7 @@ header {
 	}
 
 	.open-nav {
-		background-image: url(/img/icons/menu.svg);
+		background-image: url($baseurl + "/img/icons/menu.svg");
 		background-color: transparent;
 		background-repeat: no-repeat;
 		background-size: 100%;

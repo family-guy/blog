@@ -31,6 +31,7 @@ $nav-width: 300px;
 
 $mobile-break: 700px;
 $full-width-break: $nav-width + ($space * 4) + $content-max-width;
+$baseurl: "{{ site.baseurl }}";
 
 @import "layout";
 @import "changelog";
