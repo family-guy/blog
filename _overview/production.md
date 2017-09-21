@@ -4,4 +4,4 @@ order: 1
 permalink: /
 ---
 
-<img src="../img/overview/production.jpg">
+<img src="..{{  site.baseurl  }}/img/overview/production.jpg">
