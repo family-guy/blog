@@ -30,18 +30,12 @@ collections:
     active_prefix: overview
     output: true
     order: 1
-  setup:
-    title: Developer Computer Setup
-    permalink: /setup/:title/
-    active_prefix: setup
-    output: true
-    order: 2
   workflow:
     title: Workflow
     permalink: /workflow/:title/
     active_prefix: workflow
     output: true
-    order: 3
+    order: 2
 
 defaults:
 - scope:
