@@ -1,11 +1,11 @@
-name: CloudCannon Documentation
+name: Guy King Homepage Wiki
 version: 3.0.3
-url: https://docs.cloudcannon.com
+url: https://guyrking.com
 future: true
 
 author:
-  name: CloudCannon
-  email: support@cloudcannon.com
+  name: Guy King
+  email: guy@zorncapital.com
 
 baseurl: /blog
 
