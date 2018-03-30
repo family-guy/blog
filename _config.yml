@@ -36,6 +36,12 @@ collections:
     active_prefix: workflow
     output: true
     order: 2
+  common_tasks:
+    title: Common Tasks
+    permalink: /common-tasks/:title/
+    active_prefix: common-tasks
+    output: true
+    order: 3
 
 defaults:
 - scope:
