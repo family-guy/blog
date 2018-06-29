@@ -24,7 +24,6 @@ order: 2
 
 - Stop container `sudo docker container stop <containername>`
 - Delete container `sudo docker container rm <containername>`
-- Merge `feature` branch into `master`
 
 #### -- Deploy to production
 
