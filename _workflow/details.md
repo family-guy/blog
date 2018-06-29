@@ -37,7 +37,8 @@ order: 2
 - If test fails, roll back by changing `guydocker/minima:<feature>`
 to `guydocker/minima` and running `./deploy-homepage.sh`
 - If test passes, merge `feature` into `master` in Github
+- Delete `feature` branch in Github
 - Wait for image in Docker Hub to build successfully
 - Change `guydocker/minima:<feature>` to `guydocker/minima` and run
 `./deploy-homepage.sh`
-- Delete `feature` branch locally and in Github
+- Locally, update `master` and delete `feature`
