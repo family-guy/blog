@@ -24,10 +24,10 @@ hostings:
   - CloudCannon
 
 collections:
-  overview:
-    title: Overview
-    permalink: /overview/:title/
-    active_prefix: overview
+  system_architecture:
+    title: System Architecture
+    permalink: /system-architecture/:title/
+    active_prefix: system-architecture
     output: true
     order: 1
   workflow:
