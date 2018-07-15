@@ -28,14 +28,13 @@ gcloud compute scp --recurse /path/to/letsencrypt <instance-name>:~
 - Install nginx `sudo apt-get install nginx`
 - Check it has installed successfully and is running `systemctl status nginx` 
 and by viewing `<instance-ip-address` in a browser
-- Upload the nginx configuation file `default` to the instance 
-`gcloud compute scp /path/to/default <instance-name>:~` from local machine, 
-ensuring `server_name` is set to `<my-domain>`
-- Move the nginx configuration file `default` on the instance to 
-`/etc/nginx/sites-enabled/default`
-- Repeat the above two steps for the nginx configuration file `nginx.conf`
+- Upload the nginx configuation files `default`, `nginx.conf` to the 
+instance `gcloud compute scp /path/to/default /path/to/nginx.conf <instance-name>:~` 
+from local machine, ensuring `server_name` is set to `<my-domain>` in `default`
+- On the instance, move `default` to `/etc/nginx/sites-enabled/` and 
+`nginx.conf` to `/etc/nginx/`
 - Stop `nginx` on the instance `sudo systemctl stop nginx`
-- Comment out lines in `deploy-homepage.sh`
+- Comment out in `deploy-homepage.sh`
 ```bash
 #!/bin/bash
 CONTAINER=homepage
@@ -48,11 +47,11 @@ docker run --detach --name=$CONTAINER --restart=always --publish=80:80 \
 # docker rmi $(docker images --filter "dangling=true" --quiet)
 ```
 - Run `./deploy-homepage.sh`
-- Comment back in lines above
 - Check `<instance-ip-address>` in the browser (it should give a warning 
 about the certificate not matching the domain)
+- Comment back in lines above
 - Point the domain to `<instance-ip-address>`
-- Check `<instance-ip-address>` in the browser (it should work as expected)
+- Now, `<instance-ip-address>` in the browser should work as expected
 
 #### ii. Continuous deployment (CircleCI, Kubernetes, Google Cloud Platform)
 
