@@ -59,7 +59,7 @@ Press Enter to Continue
 ```
 
 How you go about uploading the file depends on how the target webserver is
-deployed
+deployed.
 
 #### i. Containerisation on virtual machine
 
@@ -71,9 +71,12 @@ COPY <http-challenge-filename> /usr/share/nginx/html/.well-known/acme-challenge
 ```
 
 On `master`, create a file in the root of the repository 
-`<http-challenge-filename>` with the contents `<http-challenge-file-contents>`
+`<http-challenge-filename>` containing one line `<http-challenge-file-contents>`.
 
-[Step 2]({{ site.baseurl }}/workflow/devops). You should see
+Push up on `master`, wait for image to build successfully in Docker Hub, 
+then SSH into GCE instance and run `./deploy-homepage.sh`.
+
+You should see
 `<http-challenge-file-contents>` when navigating to
 `http://<my-domain>/.well-known/acme-challenge/<http-challenge-filename>`
 
@@ -101,10 +104,10 @@ IMPORTANT NOTES:
    Donating to EFF:                    https://eff.org/donate-le
 ```
 
-and write the new key and certificate to `privkey.pem` and `fullchain.pem` 
-in `~/certbot/live/<my-domain>`.
+and write the new key `privkey.pem` and certificate `fullchain.pem` to  
+`~/certbot/live/<my-domain>` on the local machine.
 
-Upload `privkey.pem` and `fullchain.pem` to `/etc/letsencrypt/live/<my-domain>`
+Upload `privkey.pem` and `fullchain.pem` to `~`
 on the target webserver 
 
 ```
@@ -112,10 +115,13 @@ gcloud compute scp ~/certbot/live/<my-domain>/fullchain.pem \
 ~/certbot/live/<my-domain>/privkey.pem <instance-name>:~
 ```
 
-SSH into the target webserver and move the files from to the correct location.
+Ensuring `gcloud` is pointing the correct Google Cloud account and project.
+
+SSH into the target webserver and move the files from `~` to 
+`/etc/letsencrypt/live/<my-domain>`.
 
 Remove `<http-challenge-filename>` from the repository root and the lines 
-added to `Dockerfile`.
+added to `Dockerfile`. Push up.
 
 #### ii. Continuous deployment (CircleCI, Kubernetes, Google Cloud Platform)
 
