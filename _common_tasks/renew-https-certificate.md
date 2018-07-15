@@ -125,6 +125,6 @@ added to `Dockerfile`. Push up.
 
 #### ii. Continuous deployment (CircleCI, Kubernetes, Google Cloud Platform)
 
-sdfsdfsdf
+To do
 
 ### B. DNS challenge

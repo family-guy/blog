@@ -3,6 +3,8 @@ title: Details
 order: 2
 ---
 
+### i. Containerisation on virtual machine
+
 #### -- Make changes locally
 
 - Pull down `master` branch
@@ -42,3 +44,7 @@ to `guydocker/minima` and running `./deploy-homepage.sh`
 - Change `guydocker/minima:<feature>` to `guydocker/minima` and run
 `./deploy-homepage.sh`
 - Locally, update `master` and delete `feature`
+
+### ii. Continuous deployment (CircleCI, Kubernetes, Google Cloud Platform)
+
+To do
