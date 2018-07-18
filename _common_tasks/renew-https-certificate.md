@@ -123,7 +123,7 @@ SSH into the target webserver and move the files from `~` to
 Remove `<http-challenge-filename>` from the repository root and the lines 
 added to `Dockerfile`. Push up.
 
-#### ii. Continuous deployment (CircleCI, Kubernetes, Google Cloud Platform)
+#### ii. Continuous deployment
 
 To do
 

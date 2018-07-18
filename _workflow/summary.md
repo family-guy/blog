@@ -8,7 +8,9 @@ order: 1
 <br>
 <br>
 <img src="../../img/system-architecture/deployment.jpg">
+
+_Errata: Ubuntu should be Debian_
 <br>
 <br>
 
-#### ii. Continuous deployment (CircleCI, Kubernetes, Google Cloud Platform)
+#### ii. Continuous deployment
