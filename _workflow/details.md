@@ -46,7 +46,7 @@ to `guydocker/minima:gce` and running `./deploy-homepage.sh`
 - Locally, on `master`, `git cherry-pick` changes
 - Disable CircleCI webhook in Github
 - Push up on `master`
-- Locally, update `gce` and delete `feature`
+- Locally, delete `feature`
 
 ### ii. Continuous deployment
 
@@ -59,11 +59,12 @@ to `guydocker/minima:gce` and running `./deploy-homepage.sh`
 - Commit changes
 - Back to fourth step; repeat
 - If changes ok, push up on `feature`
+- Wait for CircleCI job to complete
 - Create pull request in Github
 - Final check, merge into `master`, delete `feature`
-- Wait for CircleCI builds to complete
+- Wait for CircleCI jobs to complete
 - Check `<production-domain>` in browser
 - If not ok, rollback by reverting on `master`
 - Else locally, on `gce`, `git cherry-pick` changes
 - Push up on `gce`
-- Locally, update `master` and delete `feature`
+- Locally, delete `feature`
