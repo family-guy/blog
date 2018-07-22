@@ -50,7 +50,6 @@ to `guydocker/minima:gce` and running `./deploy-homepage.sh`
 
 ### ii. Continuous deployment
 
-- Disable Docker Hub webhook in Github
 - Pull down `master` branch
 - Create and checkout `feature` branch
 - `jekyll serve` or `jekyll serve --host=0.0.0.0` if serving from guest machine
