@@ -13,7 +13,7 @@ i.  Containerisation on virtual machine (_gce_ branch)
 
 ii. Continuous deployment (_master_ branch)
 
-**Currently in use: ii.**
+**Currently in use: i.**
 
 #### i. Containerisation on virtual machine (Docker Hub, Google Cloud Platform)
 
